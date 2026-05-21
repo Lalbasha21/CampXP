@@ -1,0 +1,23 @@
+# Python
+venv/
+backend/venv/
+backend/venvScriptsactivate/
+__pycache__/
+*.pyc
+
+# Environment
+.env
+
+# Node
+node_modules/
+
+# Expo / React Native
+.expo/
+
+# Build Folders
+dist/
+build/
+
+# OS Files
+.DS_Store
+Thumbs.db
