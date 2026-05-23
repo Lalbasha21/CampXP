@@ -30,24 +30,26 @@ def register_student(db: Session, student: StudentRegister):
 
 
 def login_student(db: Session, login_data: LoginRequest):
+
     student = db.query(Student).filter(
         Student.email == login_data.email
     ).first()
 
     if not student:
         return {
-            "error" : "Invalid email"
+            "error": "Invalid email"
         }
-    valid_pasword = verify_password(
+
+    valid_password = verify_password(
         login_data.password,
         student.password
     )
-    
 
     if not valid_password:
         return {
-            "error" : "Invalid password"
+            "error": "Invalid password"
         }
+
     token = create_access_token({
         "student_id": student.id,
         "email": student.email
