@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from app.modules.student_model import Student
+from app.models.student_model import Student
 from app.schemas.auth_schema import StudentRegister
 from app.utils.helpers import hash_password
 
